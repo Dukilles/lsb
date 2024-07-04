@@ -215,6 +215,10 @@ void CItemState::Cleanup(time_point tick)
         m_PEntity->pushPacket(new CInventoryItemPacket(m_PItem, m_location, m_slot));
         m_PEntity->pushPacket(new CInventoryFinishPacket());
     }
+    else
+    {
+        m_PItem = nullptr;
+    }
 }
 
 bool CItemState::CanChangeState()
